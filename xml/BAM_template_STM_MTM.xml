@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE ead PUBLIC "+//ISBN 1-931666-00-8//DTD ead.dtd (Encoded Archival Description (EAD) Version 2002)//EN" "ead.dtd">
+<ead id="N65537">
+	<?ir_sysID 108767?>
+	<?comp_sysID 6263856?>
+	<?mass_edit 1?>
+	<?comp_id_being_edited 6263856?>
+	<eadheader countryencoding="iso3166-1" dateencoding="iso8601" langencoding="iso639-2b"
+		repositoryencoding="iso15511" scriptencoding="iso15924">
+		<eadid>FRBNFEAD000112191</eadid>
+
+		<filedesc>
+			<titlestmt>
+				<titleproper>Indien <num>1</num>. அத்துவைதானுபவம் Attuvaitāṉupavam</titleproper>
+				<subtitle>Notice descriptive</subtitle>
+			</titlestmt>
+			<publicationstmt>
+				<publisher>Bibliothèque nationale de France</publisher>
+				<date calendar="gregorian" era="ce">2019</date>
+			</publicationstmt>
+		</filedesc>
+
+		<profiledesc>
+			<creation audience="internal">Cette notice a été encodée en XML conformément à la DTD
+				EAD (version 2002).</creation>
+			<langusage>Notice rédigée en <language langcode="eng">anglais</language></langusage>
+		</profiledesc>
+
+		<revisiondesc>
+			<change>
+				<date normal="2020">2020</date>
+				<item>Notice entièrement revue et enrichie dans le cadre du projet <extref
+						href="https://tst.hypotheses.org/88">Texts Surrounding Texts</extref> (TST,
+					FRAL 2018, ANR/DFG).</item>
+			</change>
+			<change>
+				<date normal="2020">2020</date>
+				<item>Notice revue encodée par Emmanuel Francis (CNRS, CEIAS UMR 8564, EHESS/CNRS)
+					et validée par Jérôme Petit (BnF).</item>
+			</change>
+		</revisiondesc>
+
+	</eadheader>
+	<archdesc level="item">
+
+		<did>
+			<unitid type="cote">Indien 1</unitid>
+			<unitid type="ancienne cote">Tamoul 1</unitid>
+			<unittitle><title>Attuvaitāṉupavam</title>, by ராமகவி
+				<persname>Rāmakavi</persname></unittitle>
+			<langmaterial>Manuscript (palm-leaf bundle; single-text manuscript) in <language
+					langcode="tam">Tamil</language></langmaterial>
+			<unitdate calendar="gregorian" era="ce" normal="1835">No internal date. Before 1855, as
+				it is part of Ariel’s bequest made in that year to the Société Asiatique, Paris
+				(Rosny 1869). Ca. 1835 according to Vinson (1867-1868, p. 1), Cabaton (1912, p. 54).
+				The reason for this date is unknown.</unitdate>
+
+			<physdesc>
+				<geogname role="5020">South India, Tamilnadu. </geogname>
+				<physfacet type="support">Palm-leaf. Very good state of preservation, in spite of
+					bore holes caused by insects. </physfacet>
+				<extent>22 folios (1 + 21). </extent>
+				<dimensions>240 x 35 mm. </dimensions>
+				<physfacet type="écriture">Tamil script. </physfacet>
+				<physfacet type="reliure">Woodcovers apparently fabricated in the BnF. </physfacet>
+			</physdesc>
+
+			<repository>
+				<corpname authfilenumber="751041006" source="RCR">Bibliothèque nationale de France.
+					Département des Manuscrits.</corpname>
+			</repository>
+
+		</did>
+
+		<altformavail type="num">
+			<p>Il existe une version numérisée de ce document.</p>
+		</altformavail>
+		<dao actuate="onrequest" href="http://gallica.bnf.fr/ark:/12148/btv1b10026582f"
+			linktype="simple" show="new">
+			<daodesc>
+				<p>Numérisation effectuée à partir d'un document original : Indien 1.</p>
+			</daodesc>
+		</dao>
+
+		<altformavail type="mfilm">
+			<p>Microfilm en noir et blanc. Cote de consultation en salle de lecture : <num
+					type="cotesub_com">MFILM Indien 1</num>. Cote de la matrice (pour commander une
+				reproduction) : <num type="cotesub_matrice">R 209910</num>.</p>
+		</altformavail>
+		<altformavail type="num">
+			<p>Il existe une version numérisée de ce document.</p>
+		</altformavail>
+		<dao actuate="onrequest" href="http://gallica.bnf.fr/ark:/12148/btv1b10092556s"
+			linktype="simple" show="new">
+			<daodesc>
+				<p>Numérisation effectuée à partir d'un document de substitution : R 209910.</p>
+			</daodesc>
+		</dao>
+
+
+		<scopecontent>
+
+			<p>[[PRESENTATION of the text]] The <emph render="italic">Attuvaitāṉupavam</emph>,
+				“Experience of Non-Duality” (Sanskrit <emph render="italic">advaita</emph> + <emph
+					render="italic">anubhava</emph>), is a philosophical text, of which there seems
+				to exist no printed edition yet. According to the preface (f76) and the final
+				colophon (f95), the author is Rāmakavi, disciple of Civarāmakavi (Sanskrit
+				Śivarāmakavi), himself disciple of Navamakāleṭcumi Nāraciṅkatēcikar (Sanskrit
+				Navamahālakṣmī Nārasiṃhadeśika). In the present manuscript the work consists of 128
+				stanzas. </p>
+
+			<p>[[other MSS testimonies]] Other manuscript testimonies of this text are kept in the
+				GOML (Kuppuswami Sastri 1927: 1240–2, D. 1428–1430; Fazlullah and Chandrasekharan
+				1949: 2228, R. 1342; Chandrasekharan 1951: No. 106).</p>
+
+			<p>The bundle, a single-text manuscript, contains between the two woodcovers:</p>
+
+			<p><emph render="bold">U1</emph>: 1 folio, unfoliated = title-page, by hand n° 1.</p>
+
+			<p><emph render="bold">U2</emph>: 21 folios, two parallel Tamil foliations 2‒20 (f1 not
+				explicitly foliated) and 76‒95 = text (<emph render="italic">mūlam</emph>). 8 to 10
+				lines per page (most often 9), by hand n° 2. </p>
+
+			<p>OR: 32 folios, Tamil foliation 2‒32 (f1 not explicitly foliated).</p>
+			<p>OR: 163 folios, parallel Tamil foliation 1–163 and Arabic foliation 1–163.</p>
+
+			<p>OR (in case the title-page is on the front woodcover):</p>
+
+			<p>The palm-leaf bundle, a multiple-text manuscript, contains, on the front
+				woodcover:</p>
+
+			<p><emph render="bold">U1</emph>: 1 folio, unfoliated = title-page, by hand n° 1. With
+				shelfmark: C/62.</p>
+
+			<p>It contains, between the two woodcovers:</p>
+
+			<p><emph render="bold">U1</emph>: 1 folio, unfoliated = title-page, by hand n° 1.</p>
+			<p><emph render="bold">U2</emph>: 21 folios two parallel Tamil foliations 2‒20 (f1 not
+				explicitly foliated) and 76‒95 = text (<emph render="italic">mūlam</emph>). 8 to 10
+				lines per page (most often 9), by hand n° 2.</p>
+
+			<p>The text is complete/incomplete.</p>
+
+			<p><emph render="bold">Paratexts</emph>: marginal and in-text benedictions, title-page,
+				invocation page, marginal chapter headers, in-text chapter completion statements,
+					<emph render="italic">pratīka</emph>s, colophon, table of contents/total
+				stanzas, addendum, etc.</p>
+
+			<p><emph render="bold">Excerpts</emph></p>
+
+			<!--Encode text either in Tamil characters, either in transliteration (if so adopt or conventions below or update the § "conventions" to your own transliteration scheme).-->
+
+			<p><emph render="bold">U1</emph>, <extref actuate="onload"
+					href="https://gallica.bnf.fr/ark:/12148/btv1b10026582f/f3">folio 1, recto,
+					unfoliated</extref> = <emph render="bold">title-page</emph>: benediction, title. <blockquote>
+					<p>(f[1]r, c1, 1‒3) veṟṟivēl uṟṟa tuṇai</p>
+					<p>(f[1]r, c2, 1‒2) Attuvaitānupavam [i.e. attuvaitāṉupavam]</p>
+				</blockquote>
+			</p>
+
+			<p><emph render="bold">U2</emph>, <extref actuate="onload"
+					href="https://gallica.bnf.fr/ark:/12148/btv1b10026582f/f5">folio 75,
+					recto</extref> = <emph render="bold">invocation</emph>: marginal title,
+				invocatory stanza, benediction. <blockquote>
+					<p>(f75r, lm, 1‒2) Attuvaitāṉupavam</p>
+					<p>(f75r1‒f75r4) (invocatory stanza)</p>
+					<p>(f75r5) caṟkuru pātan tuṇai</p>
+				</blockquote>
+			</p>
+
+			<p><emph render="bold">U2</emph>, <extref actuate="onload"
+					href="https://gallica.bnf.fr/ark:/12148/btv1b10026582f/f7">folio 76,
+					recto</extref> = <emph render="bold">incipit</emph> of Pāyiram: marginal chapter
+				header; stanza n° 1 of Pāyiram. <blockquote>
+					<p>(f76r, lm) pāyiram kuruvaṇakkam</p>
+					<p>(f76r1) Aruḷiya ciṉmūṟtiyē muttoḻiṟku mummūṟtiyāy viṇmītiṟ ‡ karumaitōṟ
+						ṟuvateṉṉavic carā-</p>
+					<p>(f76r2) caraṅka ḷatiṉiṭattiṟkāṇpa teṉṉuṅ ‡ kuruvaruḷā liyāmaṟivilā tavaṟku
+						meyyaṟivu koḷḷa vēta-</p>
+					<p>(f76r3) p ‡ poruṇiṟaiyu mattuvitā [i.e. mattuvaitā] vaṉupavanūṟ ṟirupatumpāṟ
+						pukalu vōmē = 1 = piramacukak (…)</p>
+				</blockquote>
+			</p>
+
+			<p><emph render="bold">U2</emph>, <extref actuate="onload"
+					href="https://gallica.bnf.fr/ark:/12148/btv1b10026582f/f9">folio 77,
+					recto</extref> = <emph render="bold">incipit</emph> of Atikāralaṭcaṇam: marginal
+				chapter header, stanza n° 1 of Atikāralaṭcaṇam. <blockquote>
+					<p>(f77r, lm) Atikāralaṭcaṇam</p>
+					<p>(f77r1) pattiyuṭa ṉippiṟappil muppiṟa(p)pi lākilum(ē) palaṉvēṇṭāmal ‡
+						nittiyāvaṉittiyaṅkaḷ mutalāṉa karumaṅka</p>
+					<p>(f77r2) ṇiṟaiyac ceytā ‡ lottirunta cittacutti yuṇṭāmpiṉ ṉupācaṉaiyā lorumai
+						yuṇṭā ‡ muttitarum vicā-</p>
+					<p>(f77r3) raṇaiyāṟ piṉcīvaṉ piramamāy muṭiyun tāṉē = 1 = (…)</p>
+				</blockquote>
+			</p>
+
+			<p><emph render="bold">U2</emph>, <extref actuate="onload"
+					href="https://gallica.bnf.fr/ark:/12148/btv1b10026582f/f44">folio 94,
+					verso</extref> = <emph render="bold">excipit</emph> of Vivēkacoṟūpam: stanza n°
+				10 of Vivēkacoṟūpam, completion statement total <emph render="italic"
+					>atikāram</emph>s including Pāyiram, total stanzas. <blockquote>
+					<p>(f94v6) ciruṭṭikku muṉpiṉiraṇṭi llāmaloṉṟā yirunta cattē tiṉantē kāti ‡
+						viruttikkuñ cāṭci</p>
+					<p>(f94v7) yākiyanī yeṉṟē camavētañ collum ‡ maruppilā vaparōṭcap poruḷiteṉ
+						ṟuce(ka)cāṭ-</p>
+					<p>(f94v8) ciyāṟ māveṉṟu ‡ porutattil viḷakka mitēpirama meṉṟu mataruvaṇam
+						pukalun tāṉē = 10 = vivēkaco-</p>
+					<p>(f94v9) rūpamuṟṟum = {Āka} Atikāram – 12ukki pāyiram uḷpaṭa tiruviruttam –
+						123 =</p>
+				</blockquote>
+			</p>
+
+			<p><emph render="bold">U2</emph>, <extref actuate="onload"
+					href="https://gallica.bnf.fr/ark:/12148/btv1b10026582f/f45">folio 95, recto and
+					verso</extref> = <emph render="bold">postface</emph>, that is, <emph
+					render="italic">nūl varalāṟu</emph>. Tentative reading; only stanza 2 split by
+					<emph render="italic">cīr</emph>s, following Kuppusvami Sastri’s reading (1927,
+				p. 1241).<blockquote>
+					<p>(f95r1) Iravu-pakaliṉ ṉūlaip poruḷ aṟiyāt’ uraittālum iṉmai cērum pācukam
+						uṇṭāyp ‡ pirama-ñāṉiyāy viṭuv a-</p>
+					<p>(f95r2) ṇintap palaṉ tappātu ‡ tiramuṭaṉiṉ ṉūṟ poruḷaiy aṟint’ orukkāṟ
+						kēṭṭaṉun teruṇṭavarkkum ‡ varamutavu-</p>
+					<p>(f95r3) meññāṉiyāvata[tti]l mutti yiṅkē varuvat’ āmē = 1 = navamakā leṭcumi
+						nāraciṅka tēcikarāl ñāṉam peṟṟō-</p>
+					<p>(f95r4) ṉ ‡ civarāma kuruvutavum rāmakavi kiṟantattilc ceyta nūlai ‡ yivaṉāka
+						vē(y/pp)iṉṉun tamiḷppaṭutti ṉūl uraittā ṉe-</p>
+					<p>(f95r5) vaṟkum naṉṟāyt ‡ tavamēvu muttitaru mattuvaita niṭcēpan taruva taṉṟē
+						= 2 = Aṉpu taru kuravaṉ ati-</p>
+					<p>(f95r6) kāri-y-attiyārōpi-y-āvaraṇam nīṅkal ‡ leṉpuv ikaparapalaṉumuttar
+						piṟappakalutavum iṉiya muttar ‡</p>
+					<p>(f95r7) Aṉpu ceyum leṭcaṇamum paramapatam aṉṟiyum attuvaitāṉupavam ‡ muṉpu
+						camātiyiṉ kuṇamuñ cāṭci-</p>
+					<p>(f95r8) y-āṉanta muḻu-vivēkam āmē = 3 = naraciṅkamūṟti tiruvaṭikaḷ vāḻka =
+						karuṇaiyuruk(ku va)ṭivāyk kaṭpulattiṉi-</p>
+					<p>(f95r9) ṭai toṉṟik katipettuyya ‡ miruṇīkkum vētāntappāṉuvoḷiyāyt taṉaiyēy
+						eṅkuṅ kāṇum ‡ po- </p>
+					<p>(f95r10) ruḷ iteṉat tamiḻiṉāl attuvaitavaṉupavattaip [i.e.
+						attuvaitāṉupavattaip] ‡ poruntac ceyyuḷ ḷoruṉūṟu mirupatum paṉṇiraṇṭ’
+						atikā-</p>
+					<p>(f95v1) racarukkatt’ uḷḷuṟai ceytārē = 4 = {Āka} Atikāram 12kki viruttam =
+						128 = kurukamalam =</p>
+				</blockquote>
+			</p>
+
+			<p>Abbreviations. c = column, f = folio, lm = left margin, r = recto, rm = right margin,
+				U = unit (codicological and/or textual), v = verso. GOML = Government Oriental
+				Manuscripts Library, Madras/Chennai. MTL = Madras Tamil Lexicon. TMSSML = Tanjore
+				Maharaja Serfoji Sarasvati Mahal Library.</p>
+
+			<p><emph render="bold">Transliteration conventions.</emph></p>
+			<p>Unmarked <emph render="italic">puḷḷi</emph>, <emph render="italic">ō</emph>, and
+					<emph render="italic">ē</emph> restored. Conjectural (whether the text is not
+				clearly legible or the character is ambigous, e.g. <emph render="italic">kāl</emph>
+				or length of <emph render="italic">o</emph> and <emph render="italic">e</emph>)
+				readings between parentheses. Alternative readings between parentheses separated by
+				slash. Lost or entirely illegible character: "?". Lacuna of unknown extent: [...].
+				Crossed-out character: "X". Conjectural restoration of lost or entirely illegible
+				between square brackets. Uppercase for initial vowels (in excerpts only). Unquoted
+				text represented by (...). Conjunct letter: e.g. <emph render="italic">t°</emph>, to
+				be read <emph render="italic">tum</emph> or <emph render="italic"
+				>tam</emph><!--Update?-->. Grantha letters in bold. Symbols/Abbreviations made
+				explicit, between curly brackets: {pcs} = <emph render="italic">piḷḷaiyār
+					cuḻi</emph>, short form; {pcl} = <emph render="italic">piḷḷaiyār cuḻi</emph>,
+				long form, that is, with long horizontal stroke towards right; {varuṣam}, {mācam},
+				{tēti}; {line-filler}. Unfoliated folio number between square brackets, e.g.
+				"f[1]r". Numerals normalised to decimal notation, e.g. "1121" not "1000 1 100 2 10
+				1". Hyphen occasionaly used to mark in-word components. Hyphen systematically used
+				at the end of a line when the line-beginning is within a word or within a <emph
+					render="italic">cīr</emph>. <emph render="italic">Sandhi</emph> split to the
+				minimum: overshort <emph render="italic">u</emph> occasionally restored as an
+				apostrophe. Stanzas split by <emph render="italic">cīr</emph>, as far as possible.
+					<emph render="italic">aṭi </emph>boundary marked by "‡".</p>
+
+		</scopecontent>
+
+		<bibliography>
+			<p>Cabaton, Antoine (1912). <emph render="italic">Catalogue sommaire des manuscrits
+					indiens, indo-chinois &amp; malayo-polynésiens</emph>. Bibliothèque nationale.
+				Département des manuscrits. Paris: E. Leroux. — See <extref actuate="onload"
+					href="http://gallica.bnf.fr/ark:/12148/btv1b10329763p/f19">p. 1</extref>.</p>
+			<p>Chandrasekharan, T. (1951). <emph render="italic">An Alphabetical Index of Tamil
+					Manuscripts in the Government Oriental Manuscripts Library, Madras. Volume
+					II.</emph> Madras: Government Press.</p>
+			<p>Fazlullah, Syed Mohammad and Chandrasekharan, T. (1949). <emph render="italic">A
+					Triennial Catalogue of Tamil Manuscripts Collected During the Trienniums 1934‒35
+					to 1936‒37, 1937‒38 to 1939‒40 and 1940‒41 to 1942‒43 for the Government
+					Oriental Manuscripts Library, Madras. Volume VIII. Part II. Tamil (R. Nos. 1056
+					to 1473).</emph> Madras: Government Press.</p>
+			<p>Francis, Emmanuel (2019-05-13). BnF INDIEN 1: Attuvaitāṉupavam, “Experience of
+				Non-Duality”. <extref actuate="onload" href="https://tst.hypotheses.org/162"
+					>https://tst.hypotheses.org/162</extref></p>
+			<p>Kuppuswami Sastri, S. (1927). <emph render="italic">A Descriptive Catalogue of the
+					Tamil Manuscripts in the Government Oriental Manuscripts Library, Madras. Volume
+					3. Religion and Philosophy (Saivism).</emph> Madras: Government Press.</p>
+			<p>Rosny, Léon de (1869). La bibliothèque tamoule de M. Ariel, de Pondichéry. In: <emph
+					render="italic">Variétés orientales</emph> (pp. 177‒224). Paris:
+				Maisonneuve.</p>
+			<p>Vinson, Julien (1867‒1868). <emph render="italic">Catalogue des manuscrits
+					tamouls</emph>. Corrected proofreadings printed by the atelier oriental de
+				l’Imprimerie nationale. Access No. 4-IMPROR-77 (B). — See <extref actuate="onload"
+					href="http://gallica.bnf.fr/ark:/12148/btv1b105333021/f11">p. 1</extref>.</p>
+		</bibliography>
+
+		<acqinfo>
+			<p>Bequest of <persname authfilenumber="ark:/12148/cb143513141"
+					normal="Ariel, Edouard (1818-1854)" role="4010" source="OPP">Edouard
+					Ariel</persname>. Made first to Société Asiatique de Paris in 1855, later
+				transfered to Bibliothèque Nationale (see Rosny 1869).</p>
+		</acqinfo>
+
+		<processinfo>
+			<p>This catalogue entry has been redacted by Emmanuel FRANCIS (CNRS, CEIAS UMR 8564,
+				EHESS/CNRS) for the research program <extref href="https://tst.hypotheses.org/88"
+					>Texts Surrounding Texts</extref> (TST, FRAL 2018, ANR/DFG). With the kind help
+				of Giovanni Ciotti (Hamburg University) &amp; Marco Franceschini (Bologna
+				University) for deciphering and interpreting the colophon date<!--Update!-->.
+				Version 1, May 2020<!--Update!-->.</p>
+			<p>+ acknowledgement help </p>
+		</processinfo>
+
+		<dsc/>
+	</archdesc>
+</ead>

@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Editor mockup</title>
+<meta charset="utf-8"/>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,300i,700,700i">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.css">
+<link rel="stylesheet" href="lib/milligram/milligram.min.css">
+<link rel="stylesheet" href="lib/choices/choices.min.css">
+<link rel="stylesheet" href="lib/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="lib/codemirror/addon/hint/show-hint.css">
+<link rel="stylesheet" href="lib/codemirror/addon/lint/lint.css">
+
+<link rel="stylesheet" href="editor.css">
+
+<script src="lib/codemirror/lib/codemirror.js"></script>
+<script src="lib/codemirror/addon/hint/show-hint.js"></script>
+<script src="lib/codemirror/addon/hint/xml-hint.js"></script>
+<script src="lib/codemirror/addon/lint/htmlhint.js"></script>
+<script src="lib/codemirror/addon/lint/lint.js"></script>
+<script src="lib/codemirror/addon/lint/xml-lint.js"></script>
+<script src="lib/codemirror/mode/xml/xml.js"></script>
+
+<script src="lib/choices/choices.min.js"></script>
+
+<script src="lib/hypher/hypher-nojquery.js"></script>
+<script src="lib/hypher/sa.js"></script>
+
+<script src="lib/sanscript.js"></script>
+
+<script src="lib/FileSaver.min.js"></script>
+
+<script src="template.js"></script>
+<script src="editor.js"></script>
+</head>
+
+<body>
+<div id="resources" style="position: absolute; visibility: hidden">
+<object id="ead_style" data="xslt/ead.xml" type="text/xml"></object>
+<object id="add_ns" data="xslt/add-ns.xml" type="text/xml"></object>
+</div>
+<div id="topbuttons">
+    <form id="topmenu" class="buttoncontainer justified-row">
+        <span class="menu_left">
+            <!--iv id="scriptselect" class="menubox">
+                <div class="heading">IAST</div>
+                <ul class="dropdown">
+                    <li data-value="iast" class="selected">IAST</li>
+                    <li data-value="devanagari">Devanāgarī</li>
+                    <li data-value="malayalam">Malayālam</li>
+                    <li data-value="telugu">Telugu</li>
+                </ul>
+            </div-->
+            <!--div id="options_menu" class="menubox">
+            <button type="button" id="options_button" style="width: 40px; padding: 0">
+                <svg height='40px' width='50px'style="margin-left: -6px;" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" xml:space="preserve">
+                    <path d="M53,61.155c-3.023,0-5.558,2.104-6.234,4.921H27.011c-0.829,0-1.5,0.672-1.5,1.5s0.671,1.5,1.5,1.5h19.757  c0.68,2.813,3.212,4.913,6.232,4.913c3.538,0,6.416-2.879,6.416-6.417S56.538,61.155,53,61.155z M53,70.989  c-1.883,0-3.414-1.529-3.417-3.41c0-0.001,0-0.002,0-0.003c0-0.002,0-0.005,0-0.007c0.001-1.883,1.534-3.414,3.417-3.414  s3.416,1.533,3.416,3.417S54.884,70.989,53,70.989z M27.01,32.927h23.756c0.678,2.816,3.212,4.918,6.232,4.918  c3.538,0,6.417-2.879,6.417-6.418c0-3.538-2.879-6.416-6.417-6.416c-3.021,0-5.555,2.101-6.232,4.916H27.01  c-0.829,0-1.5,0.671-1.5,1.5S26.182,32.927,27.01,32.927z M56.999,28.011c1.884,0,3.417,1.532,3.417,3.416  c0,1.885-1.533,3.418-3.417,3.418s-3.417-1.533-3.417-3.418C53.582,29.543,55.115,28.011,56.999,28.011z M67.915,32.927h5.072  c0.828,0,1.5-0.671,1.5-1.5s-0.672-1.5-1.5-1.5h-5.072c-0.828,0-1.5,0.671-1.5,1.5S67.087,32.927,67.915,32.927z M72.988,48H49.832  c-0.829,0-1.5,0.671-1.5,1.5s0.671,1.5,1.5,1.5h23.156c0.828,0,1.5-0.672,1.5-1.5S73.816,48,72.988,48z M27.01,50.998h5.756  c0.678,2.816,3.211,4.918,6.233,4.918c3.539,0,6.417-2.879,6.417-6.417c0-3.539-2.878-6.417-6.417-6.417  c-3.021,0-5.554,2.101-6.232,4.917H27.01c-0.829,0-1.5,0.671-1.5,1.5S26.182,50.998,27.01,50.998z M39,46.082  c1.884,0,3.417,1.533,3.417,3.417S40.884,52.916,39,52.916s-3.417-1.532-3.417-3.417S37.115,46.082,39,46.082z M72.988,66.072  h-9.072c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h9.072c0.828,0,1.5-0.672,1.5-1.5S73.816,66.072,72.988,66.072z"></path>
+                </svg>
+            </button>
+            <ul id="options_options">
+                <li><label for="menu_width">width</label><input type="range" id="menu_width" min="40" max="150" value="100"></li>
+                <li><input type="checkbox" id="menu_deleted" data-select='del' checked><label for="menu_deleted">show deleted</label></li>
+                <li><input type="checkbox" id="menu_added" data-select='ins' checked><label for="menu_added">show added</label></li>
+                <li><input type="checkbox" id="menu_pb" data-select='.pb' checked><label for="menu_pb">show page breaks</label></li>
+                <li><input type="checkbox" id="menu_lb" data-select='.lb, .lb-minimal' checked><label for="menu_lb">show line breaks</label></li>
+            </ul>
+            </div-->
+            <!--button type="button" id="storyview"></button-->
+        </span>
+        <button type="button" id="saveasbutton">save as...</button>
+    </form>
+</div>
+<div id="eadheader"></div>
+<div id="headereditor">
+    <form>
+        <div>
+            <label for="hd_unitidcote">Shelfmark:</label>
+            <input type="text" id="hd_unitidcote" name="cote" data-select="archdesc[level='item'] > did > unitid[type='cote']" required pattern=".*\S.*" placeholder="Indien 1">
+            <label for="hd_unitidanciennecote">Old shelfmark:</label>
+            <input type="text" id="hd_unitidanciennecote" name="cote" data-select="archdesc[level='item'] > did > unitid[type='ancienne cote']" required pattern=".*\S.*" placeholder="Tamoul 1">
+        </div>
+        <div>
+            <label for="hd_title">Title:</label>
+            <input type="text" id="hd_title" name="title" data-select="archdesc[level='item'] > did > unittitle > title" required pattern=".*\S.*" placeholder="அத்துவைதானுபவம் Attuvaitāṉupavam">
+        </div>
+        <div>
+            <label for="hd_title">Author:</label>
+            <input type="text" id="hd_persname" name="title" data-select="archdesc[level='item'] > did > unittitle > persname" required pattern=".*\S.*" placeholder="Rāmakavi">
+        </div>
+        <div>
+            <label for="hd_unitdatenormal">Date:</label>
+            <input type="number" id="hd_unitdatenormal" data-select="archdesc[level='item'] > did > unitdate" data-attr="normal">
+            <textarea id="hd_unitdate" name="unitdate" rows="3" data-select="archdesc[level='item'] > did > unitdate" required pattern=".*\S.*" placeholder="No internal date. Before 1855, as it is part of Ariel’s donation made in that year to the Société Asiatique, Paris (Rosny 1869). Vinson (1867–1868, p. 1) dates the manuscript to ca 1835."></textarea>
+        </div>
+        <div>
+            <label for="hd_support">Support:</label>
+            <textarea rows="2" id="hd_support" name="support" data-select="archdesc[level='item'] > did > physdesc > physfacet[type='support']" placeholder="Palm-leaf. Very good state of preservation, in spite of bore holes caused by insects."></textarea>
+        </div>
+        <div>
+            <label for="hd_binding">Binding:</label>
+            <textarea rows="2" id="hd_binding" name="binding" data-select="archdesc[level='item'] > did > physdesc > physfacet[type='reliure']" placeholder="Description of binding"></textarea>
+        </div>
+        <div>
+            <label for="hd_extent">Extent:</label>
+            <input type="text" id="hd_extent" name="extent" data-select="archdesc[level='item'] > did > physdesc > extent" required placeholder="22 folios (1+21)">
+            <label for="hd_dimensions">Dimensions:</label>
+            <input type="text" id="hd_dimensions" name="dimensions" data-select="archdesc[level='item'] > did > physdesc > dimensions" required placeholder="240 x 35 mm">
+        </div>
+        <div>
+            <label for="hd_shortdesc">Short description of the text:</label>
+            <textarea id="hd_shortdesc" name="shortdesc" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='shortdesc']" required></textarea>
+        </div>
+        <div>
+            <label for="hd_othertestimonies">Other MSS testimonies:</label>
+            <textarea id="hd_othertestimonies" name="othertestimonies" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='othertestimonies']" placeholder="Other manuscript testimonies of this text are kept in the GOML (Kuppuswami Sastri 1927: 1240–2, D. 1428–1430; Fazlullah and Chandrasekharan 1949: 2228, R. 1342; Chandrasekharan 1951: No. 106)."></textarea>
+        </div>
+        <div>
+            <label for="hd_contents">Contents:</label>
+            <textarea id="hd_contents" name="contents" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='contents']" required></textarea>
+        </div>
+        <div>
+            <label for="hd_completeness">Complete/ incomplete:</label>
+            <textarea id="hd_completeness" name="completeness" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='completeness']" required></textarea>
+        </div>
+        <div>
+            <label for="hd_paratexts">Paratexts:</label>
+            <textarea id="hd_paratexts" name="completeness" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='paratexts']" placeholder="Paratexts: marginal and in-text benedictions, title-page, invocation page, marginal chapter headers, in-text chapter completion statements, pratīkas, colophon, table of contents/total stanzas, addendum, etc."></textarea>
+        </div>
+        <div>
+            <label for="hd_excerpts">Excerpts:</label>
+            <textarea id="hd_excerpts" name="excerpts" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='excerpts']" placeholder="Encode text either in Tamil characters, either in transliteration (if so, adopt conventions below or update the § 'conventions' to your own transliteration scheme)."></textarea>
+        </div>
+        <div>
+            <label for="hd_abbreviations">Abbreviations:</label>
+            <textarea id="hd_abbreviations" name="abbreviations" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='abbreviations']"></textarea>
+        </div>
+        <div>
+            <label for="hd_transliteration">Transliteration conventions:</label>
+            <textarea id="hd_transliteration" name="transliteration" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='transliteration']"></textarea>
+        </div>
+        <div>
+            <label for="hd_bibliography">Bibliography:</label>
+            <textarea id="hd_bibliography" name="bibliography" rows="10" data-select="archdesc[level='item'] > bibliography > p"></textarea>
+        </div>
+        <div>
+            <label for="hd_processinfo_persname">Cataloguer name: </label>
+            <input type="text" id="hd_processinfo_persname" name="processinfo_persname" data-select="archdesc[level='item'] > processinfo > p > persname" required>
+        </div>
+        <div>
+            <label for="hd_processinfo_address">Cataloguer affiliation: </label>
+            <input type="text" id="hd_processinfo_address" name="processinfo_address" data-select="archdesc[level='item'] > processinfo > p > address" required>
+        </div>
+        <div class="buttoncontainer row">
+            <button type="button" id="updateheader">update</button>
+            <button type="button" id="cancelheader">cancel</button>
+        </div>
+    </form>
+</div>
+<div id="teibody">
+    <form id="openform">
+        <div>
+            <div id="newfile">new file</div>
+            <div>open file:
+                <input type="file" id="file" name="file" accept=".xml"/>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
