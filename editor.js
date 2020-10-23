@@ -1074,7 +1074,9 @@ const tst = (function() {
                         q.appendChild(content);
                     }
                     
-                    const quillbox = headerEditor.makeQBox(q.id,pl);
+                    const quillbox = q.dataset.rel === 'hd_bibliography' ?
+                        headerEditor.makeQBox(q.id,pl,true) :
+                        headerEditor.makeQBox(q.id,pl);
                     state.qboxen.push([rel,quillbox]);
                 } 
             }
@@ -1082,7 +1084,19 @@ const tst = (function() {
         //const choices = new Choices(document.getElementById('hd_otherLangs'));
         },
         
-        makeQBox: function(id,placeholder) {
+        makeQBox: function(id,placeholder,nobreaks) {
+            if(nobreaks) {
+                return new Quill('#' + id, {
+                    theme: 'snow',
+                    modules: {
+                        toolbar: [
+                            ['bold','italic','blockquote'],
+                            ['link'],
+                        ]
+                    }
+                });
+            }
+
             // adapted from https://codepen.io/mackermedia/pen/gmNwZP
             const Delta = Quill.import('delta');
             const Break = Quill.import('blots/break');
