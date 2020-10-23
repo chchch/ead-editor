@@ -1,7 +1,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
                 xmlns:x="https://ead3.archivists.org/schema/"
                 exclude-result-prefixes="x">
-<xsl:output method="html" omit-xml-declaration="yes"/>
+<xsl:output method="html" omit-xml-declaration="yes" indent="yes"/>
 
 
 <xsl:template match="x:eadid"/>
@@ -15,9 +15,7 @@
     <h1><xsl:apply-templates select="x:titleproper"/></h1>
 </xsl:template>
 
-<xsl:template match="x:publicationstmt">
-    <h2><xsl:apply-templates select="x:publisher"/>, <xsl:apply-templates select="x:date"/></h2>
-</xsl:template>
+<xsl:template match="x:publicationstmt"/>
 
 <xsl:template match="x:profiledesc" />
 <xsl:template match="x:revisiondesc" />
@@ -27,34 +25,56 @@
 </xsl:template>
 
 <xsl:template match="x:did">
-    <p><span class="heading">Title: </span> <xsl:apply-templates select="x:unittitle/x:title"/></p>
-    <p><span class="heading">Author: </span> <xsl:apply-templates select="x:unittitle/x:persname"/></p>
-    <p><span class="heading">Shelfmark: </span> <xsl:apply-templates select="x:unitid[@type='cote']"/><xsl:text> </xsl:text>
-        <xsl:text>(</xsl:text><xsl:apply-templates select="x:unitid[@type='ancienne cote']"/><xsl:text>) </xsl:text>
-    </p>
-    <p>
-        <span class="heading">Language &#038; material: </span><xsl:apply-templates select="x:langmaterial"/><xsl:text>. </xsl:text>
-    </p>
-    <p><span class="heading">Date: </span><xsl:apply-templates select="x:unitdate"/>
-    </p>
-    <p><span class="heading">Format: </span>
-        <xsl:apply-templates select="x:physdesc/x:geogname"/><xsl:text> </xsl:text>
-        <xsl:apply-templates select="x:physdesc/x:physfacet[@type='support']"/><xsl:text> </xsl:text>
-        <xsl:apply-templates select="x:physdesc/x:extent"/><xsl:text>. </xsl:text>
-        <xsl:apply-templates select="x:physdesc/x:dimensions"/><xsl:text>. </xsl:text>
-        <xsl:apply-templates select="x:physdesc/x:physfacet[@type='ecriture']"/><xsl:text> </xsl:text>
-        <xsl:apply-templates select="x:physdesc/x:physfacet[@type='reliure']"/><xsl:text> </xsl:text>
-    </p>
+    <p><span class="heading">Cote : </span> <xsl:apply-templates select="x:unitid[@type='cote']"/><xsl:text> </xsl:text></p>
+    <p><span class="heading">Ancienne cote : </span> <xsl:apply-templates select="x:unitid[@type='ancienne cote']"/></p>
+    <p><span class="heading"><xsl:apply-templates select="x:unittitle"/></span></p>
+    <p><xsl:apply-templates select="x:langmaterial"/></p>
+    <p><xsl:apply-templates select="x:unitdate"/></p>
+    <p><xsl:apply-templates select="x:physdesc"/></p>
+    <!--
+        <xsl:apply-templates select="x:physdesc/x:geogname"/>
+        <xsl:apply-templates select="x:physdesc/x:physfacet[@type='support']"/>
+        <xsl:apply-templates select="x:physdesc/x:physfacet[@type='conditionnement']"/>
+        <xsl:apply-templates select="x:physdesc/x:extent"/>
+        <xsl:apply-templates select="x:physdesc/x:dimensions"/>
+        <xsl:apply-templates select="x:physdesc/x:physfacet[@type='ecriture']"/>
+        <xsl:apply-templates select="x:physdesc/x:physfacet[@type='reliure']"/>
+        <xsl:apply-templates select="x:physdesc/x:physfacet[@type='codicologie']"/>
+        <xsl:apply-templates select="x:physdesc/x:physfacet[@type='marginalia']"/>
+        <xsl:apply-templates select="x:physdesc/x:physfacet[@type='autre']"/>
+    -->
+    <p><xsl:apply-templates select="x:repository"/></p>
 </xsl:template>
 
-<xsl:template match="x:repository"/>
+<xsl:template match="x:unittitle/x:title">
+    <xsl:apply-templates/>
+</xsl:template>
+<xsl:template match="x:unittitle/x:persname">
+    <xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match="x:physfacet">
+    <xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match="x:extent">
+    <xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match="x:dimensions">
+    <xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match="x:geogname">
+    <xsl:apply-templates/>
+</xsl:template>
 
 <xsl:template match="x:language">
     <xsl:apply-templates/>
 </xsl:template>
 
 <xsl:template match="x:scopecontent">
-    <h3>Description</h3>
+    <h3>Présentation du contenu</h3>
     <xsl:apply-templates/>
 </xsl:template>
 
@@ -124,24 +144,29 @@
 </xsl:template>
 
 <xsl:template match="x:corpname">
-    <p>
-        <xsl:apply-templates/>
-    </p>
+    <xsl:apply-templates/>
 </xsl:template>
 
 <xsl:template match="x:altformavail"/>
 <xsl:template match="x:dao" />
 
 <xsl:template match="x:bibliography">
-    <h3>Bibliography</h3>
     <xsl:apply-templates/>
 </xsl:template>
 
-<xsl:template match="x:acqinfo/x:p">
-    <p><span class="heading">Provenance: </span><xsl:apply-templates/></p>
+<xsl:template match="x:bibref">
+    <xsl:element name="p">
+        <xsl:apply-templates/>
+    </xsl:element>
+</xsl:template>
+
+<xsl:template match="x:acqinfo">
+    <h3>Informations sur les modalité d'entrée</h3>
+    <xsl:apply-templates/>
 </xsl:template>
 
 <xsl:template match="x:processinfo">
+    <h3>Informations sur le traitement</h3>
     <xsl:apply-templates/>
 </xsl:template>
 
@@ -159,4 +184,38 @@
     </p>
 </xsl:template>
 
+<xsl:template match="x:emph[@render='bold']">
+    <strong>
+        <xsl:apply-templates/>
+    </strong>
+</xsl:template>
+
+<xsl:template match="x:emph[@render='italic']">
+    <em>
+        <xsl:apply-templates/>
+    </em>
+</xsl:template>
+
+<xsl:template match="x:blockquote">
+    <blockquote>
+        <xsl:apply-templates/>
+    </blockquote>
+</xsl:template>
+
+<xsl:template match="x:blockquote/x:p">
+    <xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match="x:lb">
+    <xsl:element name="br"/>
+</xsl:template>
+
+<xsl:template match="x:extref">
+    <xsl:element name="a">
+        <xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute>
+        <xsl:apply-templates/>
+    </xsl:element>
+</xsl:template>
+
 </xsl:stylesheet>
+
