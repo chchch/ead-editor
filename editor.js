@@ -14,6 +14,7 @@ const tst = (function() {
         view: 'folio',
         script: 'iast',
         qboxen: [],
+        toplevel: 'archdesc[level="item"]',
     };
 
     const init = function() {
@@ -42,6 +43,7 @@ const tst = (function() {
                 xslt_processor.importStylesheet(add_ns.contentDocument);
                 state.xmlDoc = xslt_processor.transformToDocument(state.xmlDoc);
             }
+            console.log(state.xmlDoc);
             document.getElementById('teibody').innerHTML = '';
             displayXML(state.xmlDoc);
             document.body.addEventListener('click',bodyClick);
@@ -292,9 +294,10 @@ const tst = (function() {
     
         header: function(xmlDoc) {
             const eadheader = document.getElementById('eadheader');
+            const eadtop = xmlDoc.querySelector('ead') || xmlDoc.querySelector('c');
             const headerfragment = XSLTransform(
                 document.getElementById('ead_style').contentDocument,
-                xmlDoc.getElementsByTagName('ead')[0]
+                eadtop
             );
         
             eadheader.innerHTML = '';
@@ -1023,11 +1026,16 @@ const tst = (function() {
     const headerEditor = {
 
         init: function() {
+            state.toplevel = state.xmlDoc.querySelector(state.toplevel) ?
+                state.toplevel :
+                'c[level="otherlevel"]';
+
+            const toplevel = state.xmlDoc.querySelector(state.toplevel);
             const editor = document.getElementById('headereditor');
             document.getElementById('eadheader').style.display = 'none';
             const fields = editor.querySelectorAll('input,select,textarea');
             for(let field of fields) {
-                let xmlEl = state.xmlDoc.querySelector(field.dataset.select);
+                let xmlEl = toplevel.querySelector(field.dataset.select);
                 let attr = field.dataset.attr;
                 let prefix = field.dataset.prefix;
                 let value;
@@ -1211,14 +1219,14 @@ const tst = (function() {
                     return false;
                 }
             }
-            
+            const toplevel = state.xmlDoc.querySelector(state.toplevel);
             for(let field of fields) {
                 let value = field.type === 'text' ? 
                     field.value.trim() : 
                     field.value;
                 let attr = field.dataset.attr;
                 let prefix = field.dataset.prefix;
-                let xmlEl = state.xmlDoc.querySelector(field.dataset.select);
+                let xmlEl = toplevel.querySelector(field.dataset.select);
                 const valtrim = value.trim();
                 if(!valtrim) {
                     if(!xmlEl) continue;
@@ -1230,7 +1238,7 @@ const tst = (function() {
                         continue;
                     }
                 }
-                if(!xmlEl) xmlEl = makeElement(state.xmlDoc,field.dataset.select);
+                if(!xmlEl) xmlEl = makeElement(state.xmlDoc,field.dataset.select,state.toplevel);
                 if(field.multiple) {
                     let selected = [];
                     for(let opt of field.querySelectorAll('option[selected]'))
@@ -1273,23 +1281,25 @@ const tst = (function() {
             const year = new Date().toLocaleDateString('en-US',{year:'numeric'});
             // update publication year
             const date = state.xmlDoc.querySelector('publicationstmt > date');
-            date.innerHTML = year;
+            if(date) date.innerHTML = year;
             
             // update language
             const language = state.xmlDoc.querySelector('profiledesc > langusage > language');
-            language.setAttribute('langcode','eng');
-            language.innerHTML = 'anglais';
+            if(language) {
+                language.setAttribute('langcode','eng');
+                language.innerHTML = 'anglais';
+            }
 
             // change langmaterial
-            const langmaterial = state.xmlDoc.querySelector('archdesc[level="item"] > did > langmaterial');
-            langmaterial.innerHTML = 'Manuscript in <language langcode="tam">Tamil</language>';
+            const langmaterial = state.xmlDoc.querySelector(`${state.toplevel} > did > langmaterial`);
+            if(langmaterial) langmaterial.innerHTML = 'Manuscript in <language langcode="tam">Tamil</language>';
 
             // update title field in titleStmt
             const titleproper = state.xmlDoc.querySelector('eadheader > filedesc > titlestmt > titleproper');
             const shelfmark = state.xmlDoc.querySelector(editor.querySelector('#hd_unitidcote').dataset.select).innerHTML;
             const title = state.xmlDoc.querySelector(editor.querySelector('#hd_title').dataset.select).innerHTML;
             const tamiltitle = to.tamil(title);
-            titleproper.innerHTML = `${shelfmark}. ${tamiltitle} ${title}`;
+            if(titleproper) titleproper.innerHTML = `${shelfmark}. ${tamiltitle} ${title}`;
 
             // update unittitle
             const unittitle = state.xmlDoc.querySelector('archdesc[level="item"] > did > unittitle');
@@ -1299,18 +1309,18 @@ const tst = (function() {
                 const tamilauthor = to.tamil(author);
                 unittitle.innerHTML = `${tamiltitle} <title>${title}</title>, by ${tamilauthor} <persname role="0070">${author}</persname>`;
             }
-            else {
+            else if(unittitle) {
                 unittitle.innerHTML = `${tamiltitle} <title>${title}</title>`;
             }
             // update processinfo
-            const processinfo = state.xmlDoc.querySelector('archdesc[level="item"] > processinfo > p');
+            const processinfo = state.xmlDoc.querySelector(`${state.toplevel} > processinfo > p`);
             const cname = state.xmlDoc.querySelector(editor.querySelector('#hd_processinfo_persname').dataset.select).innerHTML;
             const corpname = state.xmlDoc.querySelector(editor.querySelector('#hd_processinfo_corpname').dataset.select).innerHTML;
             processinfo.innerHTML = `This catalogue entry has been redacted by <persname>${cname}</persname> (<corpname>${corpname}</corpname>) for the research program <extref href="https://tst.hypotheses.org/88">Texts Surrounding Texts</extref> (TST, FRAL 2018, ANR/DFG). Version 1, ${new Date().toLocaleDateString('en-US',{month:'short',year:'numeric'})}.`;
             
             // add change
             const changeselector = 'eadheader > revisiondesc > change';
-            const changeel = state.xmlDoc.querySelector(changeselector) || makeElement(state.xmlDoc,changeselector);
+            const changeel = state.xmlDoc.querySelector(changeselector) || makeElement(state.xmlDoc,changeselector,state.toplevel);
             changeel.innerHTML = `<date normal="${year}">${year}</date><item>Notice entièrement revue et enrichie dans le cadre du projet <extref href="https://tst.hypotheses.org/88">Texts Surrounding Texts</extref> (TST, FRAL 2018, ANR/DFG).</item>`;
         },
         
@@ -1329,17 +1339,17 @@ const tst = (function() {
                 physdesc.appendChild(c);
             }
             // do archdesc
-            const archdesc = state.xmlDoc.querySelector('archdesc[level="item"]');
+            const toplevel = state.xmlDoc.querySelector(state.toplevel);
             const archdescorder = ['scopecontent','bibliography','acqinfo','processinfo'];
             for(const a of archdescorder) {
-                const el = archdesc.querySelector(a);
-                if(el) archdesc.appendChild(el);
+                const el = toplevel.querySelector(a);
+                if(el) toplevel.appendChild(el);
             }
         },
     };
 
     const makeElement = function(xmlDoc,selector,par) {
-        const top = xmlDoc.querySelector('ead');
+        const top = xmlDoc.querySelector('ead') || xmlDoc.querySelector('c');
         const ns = top.namespaceURI;
         var par_el = par ? xmlDoc.querySelector(par) : top;
         const children = selector.split(/\s*>\s*/g).filter(x => x);

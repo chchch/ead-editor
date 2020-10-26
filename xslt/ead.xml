@@ -15,6 +15,16 @@
     <h1><xsl:apply-templates select="x:titleproper"/></h1>
 </xsl:template>
 
+<xsl:template match="x:c">
+     <xsl:element name="img">
+        <xsl:attribute name="class">editbutton</xsl:attribute>
+        <xsl:attribute name="id">headeredit</xsl:attribute>
+        <xsl:attribute name="src">edit_icon.svg</xsl:attribute>
+    </xsl:element>
+    <h1><xsl:apply-templates select="//x:unitid"/>. <xsl:apply-templates select="//x:unittitle"/></h1>
+    <xsl:apply-templates/>
+</xsl:template>
+
 <xsl:template match="x:publicationstmt"/>
 
 <xsl:template match="x:profiledesc" />

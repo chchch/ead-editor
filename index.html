@@ -79,131 +79,131 @@
     <form autocomplete="off">
         <div>
             <label for="hd_unitidcote">Shelfmark:</label>
-            <input type="text" id="hd_unitidcote" name="cote" data-select="archdesc[level='item'] > did > unitid[type='cote']" required pattern=".*\S.*" placeholder="Indien XX">
+            <input type="text" id="hd_unitidcote" name="cote" data-select="did > unitid[type='cote']" required pattern=".*\S.*" placeholder="Indien XX">
             <label for="hd_unitidanciennecote">Old shelfmark:</label>
-            <input type="text" id="hd_unitidanciennecote" name="cote" data-select="archdesc[level='item'] > did > unitid[type='ancienne cote']" required pattern=".*\S.*" placeholder="Tamoul XX">
+            <input type="text" id="hd_unitidanciennecote" name="cote" data-select="did > unitid[type='ancienne cote']" required pattern=".*\S.*" placeholder="Tamoul XX">
         </div>
         <div>
             <label for="hd_title">Title:</label>
-            <input type="text" id="hd_title" name="title" data-select="archdesc[level='item'] > did > unittitle > title" required pattern=".*\S.*" placeholder="transliterated title">
+            <input type="text" id="hd_title" name="title" data-select="did > unittitle > title" required pattern=".*\S.*" placeholder="transliterated title">
         </div>
         <div>
             <label for="hd_title">Author:</label>
-            <input type="text" id="hd_persname" name="title" data-select="archdesc[level='item'] > did > unittitle > persname" pattern=".*\S.*" placeholder="transliterated author name">
+            <input type="text" id="hd_persname" name="title" data-select="did > unittitle > persname" pattern=".*\S.*" placeholder="transliterated author name">
         </div>
         <div>
             <label for="hd_unitdatenormal">Date:</label>
-            <input type="number" id="hd_unitdatenormal" data-select="archdesc[level='item'] > did > unitdate" data-attr="normal">
-            <textarea id="hd_unitdate" name="unitdate" rows="3" data-select="archdesc[level='item'] > did > unitdate" required pattern=".*\S.*" placeholder="No internal date. Before 1855, as it is part of Ariel’s donation made in that year to the Société Asiatique, Paris (Rosny 1869). Vinson (1867–1868, p. 1) dates the manuscript to ca 1835."></textarea>
+            <input type="number" id="hd_unitdatenormal" data-select="did > unitdate" data-attr="normal">
+            <textarea id="hd_unitdate" name="unitdate" rows="3" data-select="did > unitdate" required pattern=".*\S.*" placeholder="No internal date. Before 1855, as it is part of Ariel’s donation made in that year to the Société Asiatique, Paris (Rosny 1869). Vinson (1867–1868, p. 1) dates the manuscript to ca 1835."></textarea>
         </div>
         <div>
             <label for="hd_geogname">Place:</label>
-            <textarea rows="1" id="hd_support" name="support" data-select="archdesc[level='item'] > did > physdesc > geogname" placeholder="Tamilnadu. "></textarea>
+            <textarea rows="1" id="hd_support" name="support" data-select="did > physdesc > geogname" placeholder="Tamilnadu. "></textarea>
         </div>
         <div>
             <label for="hd_support">Support:</label>
-            <textarea rows="2" id="hd_support" name="support" data-select="archdesc[level='item'] > did > physdesc > physfacet[type='support']" placeholder="Palm-leaf."></textarea>
+            <textarea rows="2" id="hd_support" name="support" data-select="did > physdesc > physfacet[type='support']" placeholder="Palm-leaf."></textarea>
         </div>
         <div>
             <label for="hd_condition">Condition:</label>
-            <textarea rows="2" id="hd_condition" name="condition" data-select="archdesc[level='item'] > did > physdesc > physfacet[type='conditionnement']" placeholder="Very good state of preservation, in spite of bore holes caused by insects."></textarea>
+            <textarea rows="2" id="hd_condition" name="condition" data-select="did > physdesc > physfacet[type='conditionnement']" placeholder="Very good state of preservation, in spite of bore holes caused by insects."></textarea>
         </div>
         <div>
             <label for="hd_script">Script:</label>
-            <textarea rows="2" id="hd_script" name="script" data-select="archdesc[level='item'] > did > physdesc > physfacet[type='écriture']" placeholder="Tamil script, northern Devanāgarī, Bengali, etc."></textarea>
+            <textarea rows="2" id="hd_script" name="script" data-select="did > physdesc > physfacet[type='écriture']" placeholder="Tamil script, northern Devanāgarī, Bengali, etc."></textarea>
         </div>
         <div>
             <label for="hd_binding">Binding:</label>
-            <textarea rows="2" id="hd_binding" name="binding" data-select="archdesc[level='item'] > did > physdesc > physfacet[type='reliure']" placeholder="Description of binding"></textarea>
+            <textarea rows="2" id="hd_binding" name="binding" data-select="did > physdesc > physfacet[type='reliure']" placeholder="Description of binding"></textarea>
         </div>
         <div>
             <label for="hd_extent">Extent:</label>
-            <textarea rows="1" id="hd_extent" name="extent" data-select="archdesc[level='item'] > did > physdesc > extent" required placeholder="22 folios (1+21)"></textarea>
+            <textarea rows="1" id="hd_extent" name="extent" data-select="did > physdesc > extent" required placeholder="22 folios (1+21)"></textarea>
             <label for="hd_dimensions">Dimensions:</label>
-            <textarea rows="1" id="hd_dimensions" name="dimensions" data-select="archdesc[level='item'] > did > physdesc > dimensions" required placeholder="## x ## mm"></textarea>
+            <textarea rows="1" id="hd_dimensions" name="dimensions" data-select="did > physdesc > dimensions" required placeholder="## x ## mm"></textarea>
         </div>
         <div>
             <label for="hd_codicology">Codicological features:</label>
-            <textarea rows="2" id="hd_codicology" name="codicology" data-select="archdesc[level='item'] > did > physdesc > physfacet[type='codicologie']" placeholder="written dimensions, stringholes, lines per page, akṣaras per line, etc."></textarea>
+            <textarea rows="2" id="hd_codicology" name="codicology" data-select="did > physdesc > physfacet[type='codicologie']" placeholder="written dimensions, stringholes, lines per page, akṣaras per line, etc."></textarea>
         </div>
         <div>
             <label for="hd_marginalia">Marginalia:</label>
-            <textarea rows="2" id="hd_marginalia" name="marginalia" data-select="archdesc[level='item'] > did > physdesc > physfacet[type='marginalia']" placeholder="marginal correctiions or annotations, etc."></textarea>
+            <textarea rows="2" id="hd_marginalia" name="marginalia" data-select="did > physdesc > physfacet[type='marginalia']" placeholder="marginal correctiions or annotations, etc."></textarea>
         </div>             
         <div>
             <label for="hd_other">Other notes:</label>
-            <textarea rows="2" id="hd_other" name="other" data-select="archdesc[level='item'] > did > physdesc > physfacet[type='autre']" placeholder="any other additional notes on the physical description"></textarea>
+            <textarea rows="2" id="hd_other" name="other" data-select="did > physdesc > physfacet[type='autre']" placeholder="any other additional notes on the physical description"></textarea>
         </div>        
         <div>
             <label for="hd_shortdesc">Short description of the text:</label>
-            <input type="text" id="hd_shortdesc" name="shortdesc" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='shortdesc']" class="quillhidden" required></input>
+            <input type="text" id="hd_shortdesc" name="shortdesc" rows="10" data-select="scopecontent > p[id='shortdesc']" class="quillhidden" required></input>
             <div class="quillcontainer">
                 <div id="hd_shortdesc_quill" class="quillbox" data-rel="hd_shortdesc"></div>
             </div>
         </div>
         <div>
             <label for="hd_othertestimonies">Other MSS testimonies:</label>
-            <input type="text" id="hd_othertestimonies" name="othertestimonies" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='othertestimonies']" placeholder="Other manuscript testimonies of this text are kept in the GOML (Kuppuswami Sastri 1927: 1240–2, D. 1428–1430; Fazlullah and Chandrasekharan 1949: 2228, R. 1342; Chandrasekharan 1951: No. 106)." class="quillhidden"></input>
+            <input type="text" id="hd_othertestimonies" name="othertestimonies" rows="10" data-select="scopecontent > p[id='othertestimonies']" placeholder="Other manuscript testimonies of this text are kept in the GOML (Kuppuswami Sastri 1927: 1240–2, D. 1428–1430; Fazlullah and Chandrasekharan 1949: 2228, R. 1342; Chandrasekharan 1951: No. 106)." class="quillhidden"></input>
             <div class="quillcontainer">
                 <div id="hd_othertestimonies_quill" class="quillbox" data-rel="hd_othertestimonies"></div>
             </div>
         </div>
         <div>
             <label for="hd_contents">Contents:</label>
-            <input type="text" id="hd_contents" name="contents" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='contents']" class="quillhidden" required></input>
+            <input type="text" id="hd_contents" name="contents" rows="10" data-select="scopecontent > p[id='contents']" class="quillhidden" required></input>
             <div class="quillcontainer">
                 <div id="hd_contents_quill" class="quillbox" data-rel="hd_contents"></div>
             </div>
         </div>
         <div>
             <label for="hd_completeness">Complete/ incomplete:</label>
-            <input type="text" id="hd_completeness" name="completeness" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='completeness']" class="quillhidden" required></input>
+            <input type="text" id="hd_completeness" name="completeness" rows="10" data-select="scopecontent > p[id='completeness']" class="quillhidden" required></input>
            <div class="quillcontainer">
                 <div id="hd_completeness_quill" class="quillbox" data-rel="hd_completeness"></div>
             </div> 
         </div>
         <div>
             <label for="hd_paratexts">Paratexts:</label>
-            <input type="text" id="hd_paratexts" name="paratexts" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='paratexts']" placeholder="Paratexts: marginal and in-text benedictions, title-page, invocation page, marginal chapter headers, in-text chapter completion statements, pratīkas, colophon, table of contents/total stanzas, addendum, etc." class="quillhidden"></input>
+            <input type="text" id="hd_paratexts" name="paratexts" rows="10" data-select="scopecontent > p[id='paratexts']" placeholder="Paratexts: marginal and in-text benedictions, title-page, invocation page, marginal chapter headers, in-text chapter completion statements, pratīkas, colophon, table of contents/total stanzas, addendum, etc." class="quillhidden"></input>
            <div class="quillcontainer">
                 <div id="hd_paratexts_quill" class="quillbox" data-rel="hd_paratexts"></div>
             </div> 
         </div>
         <div>
             <label for="hd_excerpts">Excerpts:</label>
-            <input type="text" id="hd_excerpts" name="excerpts" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='excerpts']" class="quillhidden" placeholder="Encode text either in Tamil characters, either in transliteration (if so, adopt conventions below or update the § 'conventions' to your own transliteration scheme)."></input>
+            <input type="text" id="hd_excerpts" name="excerpts" rows="10" data-select="scopecontent > p[id='excerpts']" class="quillhidden" placeholder="Encode text either in Tamil characters, either in transliteration (if so, adopt conventions below or update the § 'conventions' to your own transliteration scheme)."></input>
            <div class="quillcontainer">
                 <div id="hd_excerpts_quill" class="quillbox" data-rel="hd_excerpts"></div>
             </div> 
         </div>
         <div>
             <label for="hd_abbreviations">Abbreviations:</label>
-            <input type="text" id="hd_abbreviations" name="abbreviations" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='abbreviations']" class="quillhidden"></input>
+            <input type="text" id="hd_abbreviations" name="abbreviations" rows="10" data-select="scopecontent > p[id='abbreviations']" class="quillhidden"></input>
             <div class="quillcontainer">
                 <div id="hd_abbreviations_quill" class="quillbox" data-rel="hd_abbreviations"></div>
             </div>        
         </div>
         <div>
             <label for="hd_transliteration">Transliteration conventions:</label>
-            <input type="text" id="hd_transliteration" name="transliteration" rows="10" data-select="archdesc[level='item'] > scopecontent > p[id='transliteration']" class="quillhidden"></input>
+            <input type="text" id="hd_transliteration" name="transliteration" rows="10" data-select="scopecontent > p[id='transliteration']" class="quillhidden"></input>
 <div class="quillcontainer">
                 <div id="hd_transliteration_quill" class="quillbox" data-rel="hd_transliteration"></div>
             </div>        
         </div>
         <div>
             <label for="hd_bibliography">Bibliography:</label>
-            <input type="text" id="hd_bibliography" name="bibliography" rows="10" data-select="archdesc[level='item'] > bibliography" data-format="bibliography" class="quillhidden"></input>
+            <input type="text" id="hd_bibliography" name="bibliography" rows="10" data-select="bibliography" data-format="bibliography" class="quillhidden"></input>
             <div class="quillcontainer">
                 <div id="hd_bibliography_quill" class="quillbox" data-rel="hd_bibliography"></div>
             </div>        
         </div>
         <div>
             <label for="hd_processinfo_persname">Cataloguer name: </label>
-            <input type="text" id="hd_processinfo_persname" name="processinfo_persname" data-select="archdesc[level='item'] > processinfo > p > persname" autocomplete="name" required>
+            <input type="text" id="hd_processinfo_persname" name="processinfo_persname" data-select="processinfo > p > persname" autocomplete="name" required>
         </div>
         <div>
             <label for="hd_processinfo_corpname">Cataloguer affiliation: </label>
-            <input type="text" id="hd_processinfo_corpname" name="processinfo_corpname" data-select="archdesc[level='item'] > processinfo > p > corpname" required>
+            <input type="text" id="hd_processinfo_corpname" name="processinfo_corpname" data-select="processinfo > p > corpname" required>
         </div>
         <div class="buttoncontainer row">
             <button type="button" id="updateheader">update</button>
